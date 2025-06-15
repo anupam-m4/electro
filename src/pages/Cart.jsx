@@ -57,7 +57,7 @@ const Cart = ({ location, getLocation, locationGranted }) => {
       clearCoupon();
       // toast.info("Coupon removed due to cart changes.");
     }
-  }, [cartItem.length]);
+  }, [cartItem]);
 
   const handleApplyCoupon = () => {
     if (couponApplied) {
