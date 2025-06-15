@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
@@ -13,8 +13,9 @@ const ProductListView = ({ product }) => {
     "Free delivery by tomorrow",
   ];
 
-  const randomDeliveryMessage =
-    deliveryMessages[Math.floor(Math.random() * deliveryMessages.length)];
+  const [randomDeliveryMessage] = useState(
+    deliveryMessages[Math.floor(Math.random() * deliveryMessages.length)]
+  );
 
   return (
     <div className=" space-y-4 mt-4 rounded-md">

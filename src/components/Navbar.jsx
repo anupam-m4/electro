@@ -57,7 +57,7 @@ const Navbar = ({
           </Link>
           <div
             className=" md:flex gap-1 cursor-pointer text-gray-700 items-center hidden"
-            onClick={toggleDropdown}
+            // onClick={toggleDropdown}
           >
             <MapPin className=" text-amber-300" />
             <span className="  font-semibold ">
@@ -70,7 +70,10 @@ const Navbar = ({
                 <span className=" text-gray-400">"Add Address"</span>
               )}
             </span>
-            <FaCaretDown onClick={toggleDropdown} className=" text-gray-400" />
+            <FaCaretDown
+            // s onClick={toggleDropdown} 
+            
+            className=" text-gray-400" />
           </div>
           {openLocDropDown ? (
             <div className=" w-[250px] h-max shadow-2xl z-50 fixed top-16 left-60 border-2 p-5 border-amber-300 rounded-md text-gray-700">
