@@ -55,7 +55,7 @@ const Cart = ({ location, getLocation, locationGranted }) => {
     useEffect(() => {
     if (couponApplied) { // Only clear if a coupon was actually applied
       clearCoupon();
-      toast.info("Coupon removed due to cart changes.");
+      // toast.info("Coupon removed due to cart changes.");
     }
   }, [cartItem.length]);
 
