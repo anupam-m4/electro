@@ -1,0 +1,23 @@
+1.React-router-dom
+BroweserRouter 	
+	Routes
+	    Route
+
+2.lucid , react icons
+3.adding Navlink to see the active link when clicked
+4.Clerk for Logging in/out
+5. geolocation - getCurrentPosition for current location, using async
+  and axios to fetch 
+6.using creatContext
+7.fetching data from fakeApi using axios (Dynamically)
+8.using react-slick for caraousel
+9.using framer motion for fade text effect and animation some things
+10.parallex effect
+11.used pagination concept (optional chaining)
+12used lottie for svgs
+13.useNavigate() , useParams(),useUser()
+14.toastify
+15.react scrool-to-top package
+16.localstorage to avoid rendering
+17.used protected route - login only to get acess the cart
+18.used Emailjs in contact form
