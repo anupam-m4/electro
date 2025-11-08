@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import empty from "../assets/emptycart.json";
 import { toast } from "react-toastify";
+import { loadStripe } from "@stripe/stripe-js";
 
 const Cart = ({ location, getLocation, locationGranted }) => {
   const navigate = useNavigate();
@@ -17,7 +18,6 @@ const Cart = ({ location, getLocation, locationGranted }) => {
     (total, item) => total + item.price * item.quantity,
     0
   );
-
   const { user } = useUser();
 
   const [couponCode, setCouponCode] = useState("");
@@ -51,6 +51,14 @@ const Cart = ({ location, getLocation, locationGranted }) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (couponApplied) {
+      // Only clear if a coupon was actually applied
+      clearCoupon();
+      toast.info("Coupon removed due to cart changes.");
+    }
+  }, [cartItem.length]);
+
   const handleApplyCoupon = () => {
     if (couponApplied) {
       toast.warn("Coupon already applied!");
@@ -83,6 +91,34 @@ const Cart = ({ location, getLocation, locationGranted }) => {
     // Remove from localStorage
     localStorage.removeItem("appliedCoupon");
   };
+  // _____________________--
+  // const handleCheckout = async () => {
+  //   const stripe = await loadStripe(
+  //     "pk_test_51POvxESAr5iSahqBQXHSgq1x0Prym7qxBDHH3XaTld2GPsBjajs3JP0aSsYmbTci0J9OP4mz90D1V24bkZTfJhss00YkhbU3Lk"
+  //   ); // your Stripe PUBLIC key
+
+  //   const res = await fetch("http://localhost:5000/create-checkout-session", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       items: cartItem, // the cart array you're already using
+  //     }),
+  //   });
+
+  //   const data = await res.json();
+
+  //   const result = await stripe.redirectToCheckout({
+  //     sessionId: data.id,
+  //   });
+
+  //   if (result.error) {
+  //     toast.error(result.error.message);
+  //   }
+  // };
+
+  // _____________________--
 
   return (
     <div className="mt-0 mb-5 max-w-6xl mx-auto px-2 md:px-4">
@@ -150,7 +186,6 @@ const Cart = ({ location, getLocation, locationGranted }) => {
               })}
             </div>
             <div className=" grid grid-cols-1 md:grid-cols-2 md:gap-20">
-             
               <div className=" bg-gray-100 rounded-md p-7 mt-5 space-y-2">
                 <h1 className=" text-gray-800 font-bold text-xl">
                   Delivery Info
@@ -235,9 +270,7 @@ const Cart = ({ location, getLocation, locationGranted }) => {
                   </div>
                 </div>
 
-                <button
-                
-                className="bg-red-500 px-3 py-1 text-white rounded-md cursor-pointer mt-2 hover:bg-red-600 transition">
+                <button className="bg-red-500 px-3 py-1 text-white rounded-md cursor-pointer mt-2 hover:bg-red-600 transition">
                   Add Address
                 </button>
               </div>
@@ -354,7 +387,10 @@ const Cart = ({ location, getLocation, locationGranted }) => {
                   off
                 </p>
 
-                <button className="bg-red-500 px-3 py-1 mt-3 text-white w-full rounded-md cursor-pointer ">
+                <button
+                  // onClick={handleCheckout}
+                  className="bg-red-500 px-3 py-1 mt-3 text-white w-full rounded-md cursor-pointer "
+                >
                   Proceed to Checkout
                 </button>
               </div>
@@ -370,6 +406,7 @@ const Cart = ({ location, getLocation, locationGranted }) => {
 
           <button
             onClick={() => navigate("/products")}
+            // onClick={handleCheckout}
             className="bg-red-500 px-3 py-2 mt-3 text-white  rounded-md cursor-pointer"
           >
             Continue Shopping
