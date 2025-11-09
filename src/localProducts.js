@@ -8,7 +8,7 @@ import headphoneImg7 from "../src/assets/apple-headphone.jpg";
 
 import watchImg1 from "../src/assets/apple-watch.jpeg";
 import watchImg2 from "../src/assets/Garmin-watch.webp";
-import watchImg3 from "../src/assets/huawei-watch.webp";
+import watchImg3 from "../src/assets/Huawei-watch.webp";
 import watchImg4 from "../src/assets/google-watch.jpg";
 import watchImg5 from "../src/assets/amazfit.webp";
 import watchImg6 from "../src/assets/motorola-watch.jpg";
