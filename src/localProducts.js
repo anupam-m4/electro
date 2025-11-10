@@ -266,7 +266,7 @@ const localProducts = [
       title: "Logitech MX Master 3S Mouse",
       price: 7999,
       discount: 15,
-      category: "Accessories",
+      category: "Speakers",
       brand: "Logitech",
       model: "MX Master 3S",
       description: "Ergonomic wireless mouse with fast scrolling and precision sensor.",
