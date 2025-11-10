@@ -810,8 +810,8 @@ const localProducts = [
 {
   id: 62,
   title: "FoodSaver Vacuum Sealer",
-  price: 159,
-  discount: 0.10, // 10% discount
+  price: 1159,
+  discount: 10, // 10% discount
   category: "Appliance",
   brand: "FoodSaver",
   description: "Automatic vacuum sealing system to keep food fresh up to five times longer. Includes integrated bag cutter and roll storage.",
@@ -821,8 +821,8 @@ const localProducts = [
 {
   id: 63,
   title: "Digital Air Fryer Pro 5.8 QT",
-  price: 129,
-  discount: 0.25, // 25% discount
+  price: 9929,
+  discount: 25, // 25% discount
   category: "Appliance",
   brand: "COSORI",
   description: "Large capacity air fryer with 11 preset cooking functions and rapid air circulation technology. Uses 85% less oil than traditional frying.",
@@ -832,8 +832,8 @@ const localProducts = [
 {
   id: 64,
   title: "Multi-Function Rice Cooker",
-  price: 89,
-  discount: 0.05, // 5% discount
+  price: 29089,
+  discount: 35, // 35% discount
   category: "Appliance",
   brand: "Zojirushi",
   description: "Micro-computerized rice cooker with specialized settings for various rice types, including sushi and brown rice. Keeps food warm automatically.",
@@ -843,8 +843,8 @@ const localProducts = [
 {
   id: 65,
   title: "AquaPure Water Filter Pitcher",
-  price: 35,
-  discount: 0.0, // No discount
+  price: 6875,
+  discount: 2, // 2 discount
   category: "Appliance",
   brand: "Brita",
   description: "Large capacity water filter pitcher reducing chlorine and heavy metals. Features an electronic indicator for filter replacement reminders.",
