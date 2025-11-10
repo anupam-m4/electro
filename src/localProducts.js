@@ -261,16 +261,7 @@ const localProducts = [
 
     // ----------------------Speaker----------------
 
-    {
-      id: 3,
-      title: "Logitech MX Master 3S Mouse",
-      price: 7999,
-      discount: 15,
-      category: "Speakers",
-      brand: "Logitech",
-      model: "MX Master 3S",
-      description: "Ergonomic wireless mouse with fast scrolling and precision sensor.",
-    },
+ 
       {
         id: 14,
         title: "JBL Speaker",
@@ -466,7 +457,7 @@ const localProducts = [
   },
 
   {
-    id: 32,
+    id: 31,
     title: "Powkiddy RGB30 Retro Handheld Console",
     price: 15999,
     discount: 15,
